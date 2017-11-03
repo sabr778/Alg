@@ -68,3 +68,23 @@ public class Solution {
     return ret;
   }
 }
+
+public class Solution {
+  public List<Integer> inOrder(TreeNode root) {
+    List<Integer> ret = new ArrayList<Integer>();
+    if (root == null) return ret;
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    TreeNode cur = root; // in this case, no need to push the root in the stack 
+    while (cur != null || !stack.isEmpty()) {
+      if (cur != null) {
+          stack.push(cur);
+          cur = cur.left; // always go to left first
+      } else {
+          cur = stack.pop();
+          ret.add(cur.key);
+          cur = cur.right;
+      }
+    }
+    return ret;
+  }
+}

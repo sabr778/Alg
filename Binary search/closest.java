@@ -23,6 +23,6 @@ public class Solution {
       else if (array[mid] < target) left = mid;
       else right = mid;
     }
-    return Math.abs(array[left] - target) <= Math.abs(array[right] - target) : left : right;
+    return Math.abs(array[left] - target) <= Math.abs(array[right] - target) ? left : right;
   }
 }
